@@ -16,7 +16,7 @@ This is a PsychoPy file for running an oddball task to collect eeg data, followi
 
 # Self_study
 
-This is a dictionary containing MATLAB code and data files.
+This is a dictionary containing MATLAB code and data files. But you need to download data [here](https://osf.io/4f5bn/files/w7d9f) and put them in right place according to the code content.
 
 # `Learning_note.Rmd`
 
