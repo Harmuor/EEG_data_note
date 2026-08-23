@@ -1,0 +1,536 @@
+4.1546 	WARNING 	psychopy.parallel has been imported on a Mac (which doesn't have a parallel port?)
+5.9848 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+5.9857 	INFO 	Loaded monitor calibration from ['2025_09_03 12:50']
+6.3356 	INFO 	Using renderer 'Apple M4' for graphics
+6.3357 	INFO 	OpenGL version supported by driver is 2..
+6.4380 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x177c8b4f0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x177c8b550>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x177cc2440>, multiSample=False, name='window1', numSamples=2, pos=[np.float64(335.0), np.float64(178.0)], screen=0, size=array([1600, 1200]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.4381 	EXP 	window1: backgroundImage = ''
+6.4381 	EXP 	window1: backgroundFit = 'none'
+6.4661 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.4820 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.4978 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.5139 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.5300 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.5455 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.5613 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.5773 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.5926 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.6079 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.6238 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.6396 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.6554 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.6712 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.6869 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.7027 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.7185 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.7339 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.7494 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.7655 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.7809 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.7812 	DEBUG 	Uploading Texture Font fontname to graphics card
+6.7872 	DEBUG 	Upload of Texture Font fontname complete
+6.8092 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.8252 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.8411 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.8413 	DEBUG 	Uploading Texture Font fontname to graphics card
+6.8446 	DEBUG 	Upload of Texture Font fontname complete
+6.8465 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+6.8465 	EXP 	window1: recordFrameIntervals = False
+7.0655 	EXP 	window1: recordFrameIntervals = True
+7.2900 	WARNING 	t of last frame was 24.63ms (=1/40)
+8.7322 	EXP 	window1: recordFrameIntervals = False
+8.7324 	EXP 	Screen (0) actual frame rate measured at 59.97Hz
+8.7546 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.7706 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.7866 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.8028 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.8190 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.8351 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.8506 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.8665 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.8826 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.8990 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.8995 	DEBUG 	Uploading Texture Font fontname to graphics card
+8.9031 	DEBUG 	Upload of Texture Font fontname complete
+10.0135 	INFO 	keyboard.Keyboard is using ptb backend.
+10.0136 	EXP 	oddball_ch3: status = STARTED
+10.0985 	EXP 	Created welcome_text_1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='welcome_text_1', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='This is welcome\n\nPress “space” to continue', units='height', win=Window(...), wrapWidth=1)
+10.1020 	EXP 	Created instruction_text_1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='instruction_text_1', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+10.1519 	EXP 	Created KeepInMindSlide_image_1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='KeepInMindSlide_image_1', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+10.1567 	EXP 	Created KeepInMindSlide_text_1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='KeepInMindSlide_text_1', opacity=1, ori=0.0, pos=array([0. , 0.3]), rgb=UNKNOWN, text='Remember This face', units='height', win=Window(...), wrapWidth=1)
+10.1631 	EXP 	Created fixation_polygon_1 = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=2.0, name='fixation_polygon_1', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+10.1643 	EXP 	Created ISI_polygon_1 = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0.0, draggable=False, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=2.0, name='ISI_polygon_1', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([2., 2.]), units='height', vertices=ndarray(...), win=Window(...))
+10.1702 	EXP 	Created RSVP_image_1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='RSVP_image_1', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+10.1754 	EXP 	Created KeepInMindRecog_image_1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='KeepInMindRecog_image_1', opacity=1, ori=0.0, pos=array([-0.4,  0.2]), size=array([0.3, 0.3]), texRes=128.0, units='height', win=Window(...))
+10.1803 	EXP 	Created KeepInMindRecog_image_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='KeepInMindRecog_image_2', opacity=1, ori=0.0, pos=array([0. , 0.2]), size=array([0.3, 0.3]), texRes=128.0, units='height', win=Window(...))
+10.1851 	EXP 	Created KeepInMindRecog_image_3 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='KeepInMindRecog_image_3', opacity=1, ori=0.0, pos=array([0.4, 0.2]), size=array([0.3, 0.3]), texRes=128.0, units='height', win=Window(...))
+10.1898 	EXP 	Created KeepInMindRecog_image_4 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='KeepInMindRecog_image_4', opacity=1, ori=0.0, pos=array([-0.4, -0.2]), size=array([0.3, 0.3]), texRes=128.0, units='height', win=Window(...))
+10.1944 	EXP 	Created KeepInMindRecog_image_5 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='KeepInMindRecog_image_5', opacity=1, ori=0.0, pos=array([ 0. , -0.2]), size=array([0.3, 0.3]), texRes=128.0, units='height', win=Window(...))
+10.1990 	EXP 	Created KeepInMindRecog_image_6 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-5.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='KeepInMindRecog_image_6', opacity=1, ori=0.0, pos=array([ 0.4, -0.2]), size=array([0.3, 0.3]), texRes=128.0, units='height', win=Window(...))
+10.1998 	EXP 	Created judge_text_1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='judge_text_1', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+10.2032 	EXP 	Created pretend_redo_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='pretend_redo_text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='as if this is redo', units='height', win=Window(...), wrapWidth=1)
+10.2084 	EXP 	Created goodbye_text_1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='goodbye_text_1', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+0.0404 	INFO 	Keyboard events cleared
+0.0403 	EXP 	welcome_text_1: autoDraw = True
+1.0539 	DATA 	Keypress: space
+1.0784 	EXP 	Device response: <KeyPress from None: t=1.044656040990958, value=space, duration=None>
+1.0903 	INFO 	Keyboard events cleared
+1.0903 	EXP 	welcome_text_1: autoDraw = False
+1.0903 	EXP 	instruction_text_1: autoDraw = True
+1.1258 	EXP 	Device response: <KeyPress from None: t=1.044656040990958, value=space, duration=0.07235166701138951>
+1.2182 	DATA 	Keypress: space
+1.2256 	EXP 	Device response: <KeyPress from None: t=1.210645665996708, value=space, duration=None>
+1.2316 	DEBUG 	Read excel file with openpyxl: list/list.xlsx
+1.2326 	EXP 	Imported list/list.xlsx as conditions, 6 conditions, 8 params
+1.2334 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'relpicture': './img/5.jpg', 'recog': './img/5.jpg', 'correct': 'y', 'irr_1': './img/6.jpg', 'irr_2': './img/1.jpg', 'irr_3': './img/2.jpg', 'irr_4': './img/3.jpg', 'irr_5': './img/4.jpg', 'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+3.0308 	EXP 	Device response: <KeyPress from None: t=1.210645665996708, value=space, duration=0.052780708007048815>
+3.0309 	EXP 	Device response: <KeyPress from None: t=1.3467252489936072, value=space, duration=None>
+3.0310 	EXP 	Device response: <KeyPress from None: t=1.3467252489936072, value=space, duration=0.052238459000363946>
+3.0311 	EXP 	Device response: <KeyPress from None: t=1.4750112489855383, value=space, duration=None>
+3.0311 	EXP 	Device response: <KeyPress from None: t=1.4750112489855383, value=space, duration=0.043928541999775916>
+3.0312 	EXP 	Device response: <KeyPress from None: t=1.7086189159890637, value=space, duration=None>
+3.0313 	EXP 	Device response: <KeyPress from None: t=1.7086189159890637, value=space, duration=0.0643144579953514>
+3.0314 	EXP 	Device response: <KeyPress from None: t=2.8475914580048993, value=space, duration=None>
+3.0314 	EXP 	Device response: <KeyPress from None: t=2.8475914580048993, value=space, duration=0.08831741599715315>
+3.0514 	DATA 	Keypress: space
+3.0533 	DATA 	Keypress: space
+3.0542 	DATA 	Keypress: space
+3.0550 	DATA 	Keypress: space
+3.0736 	EXP 	instruction_text_1: autoDraw = False
+3.0736 	EXP 	KeepInMindSlide_image_1: image = './img/5.jpg'
+3.0736 	EXP 	KeepInMindSlide_image_1: autoDraw = True
+3.0736 	EXP 	KeepInMindSlide_text_1: autoDraw = True
+5.0568 	EXP 	KeepInMindSlide_image_1: autoDraw = False
+5.0568 	EXP 	KeepInMindSlide_text_1: autoDraw = False
+5.0568 	EXP 	fixation_polygon_1: autoDraw = True
+5.7422 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+5.7569 	EXP 	fixation_polygon_1: autoDraw = False
+5.7569 	EXP 	ISI_polygon_1: autoDraw = True
+5.8569 	EXP 	ISI_polygon_1: autoDraw = False
+5.8569 	EXP 	RSVP_image_1: image = './img/2.jpg'
+5.8569 	EXP 	RSVP_image_1: autoDraw = True
+6.4419 	EXP 	New trial (rep=1, index=0): <Trial 1 (0 in rep 1) data={'thisN': 1, 'thisTrialN': 0, 'thisRepN': 1}>
+6.4569 	EXP 	RSVP_image_1: autoDraw = False
+6.4569 	EXP 	ISI_polygon_1: autoDraw = True
+6.5404 	EXP 	ISI_polygon_1: autoDraw = False
+6.5404 	EXP 	RSVP_image_1: image = './img/1.jpg'
+6.5404 	EXP 	RSVP_image_1: autoDraw = True
+7.1250 	EXP 	New trial (rep=2, index=0): <Trial 2 (0 in rep 2) data={'thisN': 2, 'thisTrialN': 0, 'thisRepN': 2}>
+7.1401 	EXP 	RSVP_image_1: autoDraw = False
+7.1401 	EXP 	ISI_polygon_1: autoDraw = True
+7.2402 	EXP 	ISI_polygon_1: autoDraw = False
+7.2402 	EXP 	RSVP_image_1: image = './img/101.jpg'
+7.2402 	EXP 	RSVP_image_1: autoDraw = True
+7.8084 	EXP 	New trial (rep=3, index=0): <Trial 3 (0 in rep 3) data={'thisN': 3, 'thisTrialN': 0, 'thisRepN': 3}>
+7.8236 	EXP 	RSVP_image_1: autoDraw = False
+7.8236 	EXP 	ISI_polygon_1: autoDraw = True
+7.9233 	EXP 	ISI_polygon_1: autoDraw = False
+7.9233 	EXP 	RSVP_image_1: image = './img/2.jpg'
+7.9233 	EXP 	RSVP_image_1: autoDraw = True
+8.5083 	EXP 	New trial (rep=4, index=0): <Trial 4 (0 in rep 4) data={'thisN': 4, 'thisTrialN': 0, 'thisRepN': 4}>
+8.5234 	EXP 	RSVP_image_1: autoDraw = False
+8.5234 	EXP 	ISI_polygon_1: autoDraw = True
+8.6235 	EXP 	ISI_polygon_1: autoDraw = False
+8.6235 	EXP 	RSVP_image_1: image = './img/1.jpg'
+8.6235 	EXP 	RSVP_image_1: autoDraw = True
+9.1912 	EXP 	New trial (rep=5, index=0): <Trial 5 (0 in rep 5) data={'thisN': 5, 'thisTrialN': 0, 'thisRepN': 5}>
+9.2067 	EXP 	RSVP_image_1: autoDraw = False
+9.2067 	EXP 	ISI_polygon_1: autoDraw = True
+9.3067 	EXP 	ISI_polygon_1: autoDraw = False
+9.3067 	EXP 	RSVP_image_1: image = './img/2.jpg'
+9.3067 	EXP 	RSVP_image_1: autoDraw = True
+9.8918 	EXP 	New trial (rep=6, index=0): <Trial 6 (0 in rep 6) data={'thisN': 6, 'thisTrialN': 0, 'thisRepN': 6}>
+9.9069 	EXP 	RSVP_image_1: autoDraw = False
+9.9069 	EXP 	ISI_polygon_1: autoDraw = True
+9.9902 	EXP 	ISI_polygon_1: autoDraw = False
+9.9902 	EXP 	RSVP_image_1: image = './img/4.jpg'
+9.9902 	EXP 	RSVP_image_1: autoDraw = True
+10.5751 	EXP 	New trial (rep=7, index=0): <Trial 7 (0 in rep 7) data={'thisN': 7, 'thisTrialN': 0, 'thisRepN': 7}>
+10.5902 	EXP 	RSVP_image_1: autoDraw = False
+10.5902 	EXP 	ISI_polygon_1: autoDraw = True
+10.6902 	EXP 	ISI_polygon_1: autoDraw = False
+10.6902 	EXP 	RSVP_image_1: image = './img/5.jpg'
+10.6902 	EXP 	RSVP_image_1: autoDraw = True
+11.2583 	EXP 	New trial (rep=8, index=0): <Trial 8 (0 in rep 8) data={'thisN': 8, 'thisTrialN': 0, 'thisRepN': 8}>
+11.2736 	EXP 	RSVP_image_1: autoDraw = False
+11.2736 	EXP 	ISI_polygon_1: autoDraw = True
+11.3735 	EXP 	ISI_polygon_1: autoDraw = False
+11.3735 	EXP 	RSVP_image_1: image = './img/4.jpg'
+11.3735 	EXP 	RSVP_image_1: autoDraw = True
+11.9584 	EXP 	New trial (rep=9, index=0): <Trial 9 (0 in rep 9) data={'thisN': 9, 'thisTrialN': 0, 'thisRepN': 9}>
+11.9736 	EXP 	RSVP_image_1: autoDraw = False
+11.9736 	EXP 	ISI_polygon_1: autoDraw = True
+12.0736 	EXP 	ISI_polygon_1: autoDraw = False
+12.0736 	EXP 	RSVP_image_1: image = './img/5.jpg'
+12.0736 	EXP 	RSVP_image_1: autoDraw = True
+12.6418 	EXP 	New trial (rep=10, index=0): <Trial 10 (0 in rep 10) data={'thisN': 10, 'thisTrialN': 0, 'thisRepN': 10}>
+12.6570 	EXP 	RSVP_image_1: autoDraw = False
+12.6570 	EXP 	ISI_polygon_1: autoDraw = True
+12.7570 	EXP 	ISI_polygon_1: autoDraw = False
+12.7570 	EXP 	RSVP_image_1: image = './img/4.jpg'
+12.7570 	EXP 	RSVP_image_1: autoDraw = True
+13.3417 	EXP 	New trial (rep=11, index=0): <Trial 11 (0 in rep 11) data={'thisN': 11, 'thisTrialN': 0, 'thisRepN': 11}>
+13.3569 	EXP 	RSVP_image_1: autoDraw = False
+13.3569 	EXP 	ISI_polygon_1: autoDraw = True
+13.4402 	EXP 	ISI_polygon_1: autoDraw = False
+13.4402 	EXP 	RSVP_image_1: image = './img/5.jpg'
+13.4402 	EXP 	RSVP_image_1: autoDraw = True
+14.0250 	EXP 	New trial (rep=12, index=0): <Trial 12 (0 in rep 12) data={'thisN': 12, 'thisTrialN': 0, 'thisRepN': 12}>
+14.0402 	EXP 	RSVP_image_1: autoDraw = False
+14.0402 	EXP 	ISI_polygon_1: autoDraw = True
+14.1401 	EXP 	ISI_polygon_1: autoDraw = False
+14.1401 	EXP 	RSVP_image_1: image = './img/6.jpg'
+14.1401 	EXP 	RSVP_image_1: autoDraw = True
+14.7083 	EXP 	New trial (rep=13, index=0): <Trial 13 (0 in rep 13) data={'thisN': 13, 'thisTrialN': 0, 'thisRepN': 13}>
+14.7234 	EXP 	RSVP_image_1: autoDraw = False
+14.7234 	EXP 	ISI_polygon_1: autoDraw = True
+14.8230 	EXP 	ISI_polygon_1: autoDraw = False
+14.8230 	EXP 	RSVP_image_1: image = './img/2.jpg'
+14.8230 	EXP 	RSVP_image_1: autoDraw = True
+15.4083 	EXP 	New trial (rep=14, index=0): <Trial 14 (0 in rep 14) data={'thisN': 14, 'thisTrialN': 0, 'thisRepN': 14}>
+15.4233 	EXP 	RSVP_image_1: autoDraw = False
+15.4233 	EXP 	ISI_polygon_1: autoDraw = True
+15.5234 	EXP 	ISI_polygon_1: autoDraw = False
+15.5234 	EXP 	RSVP_image_1: image = './img/1.jpg'
+15.5234 	EXP 	RSVP_image_1: autoDraw = True
+16.0918 	EXP 	New trial (rep=15, index=0): <Trial 15 (0 in rep 15) data={'thisN': 15, 'thisTrialN': 0, 'thisRepN': 15}>
+16.1069 	EXP 	RSVP_image_1: autoDraw = False
+16.1069 	EXP 	ISI_polygon_1: autoDraw = True
+16.2068 	EXP 	ISI_polygon_1: autoDraw = False
+16.2068 	EXP 	RSVP_image_1: image = './img/5.jpg'
+16.2068 	EXP 	RSVP_image_1: autoDraw = True
+16.7918 	EXP 	New trial (rep=16, index=0): <Trial 16 (0 in rep 16) data={'thisN': 16, 'thisTrialN': 0, 'thisRepN': 16}>
+16.8069 	EXP 	RSVP_image_1: autoDraw = False
+16.8069 	EXP 	ISI_polygon_1: autoDraw = True
+16.8902 	EXP 	ISI_polygon_1: autoDraw = False
+16.8902 	EXP 	RSVP_image_1: image = './img/2.jpg'
+16.8902 	EXP 	RSVP_image_1: autoDraw = True
+17.4751 	EXP 	New trial (rep=17, index=0): <Trial 17 (0 in rep 17) data={'thisN': 17, 'thisTrialN': 0, 'thisRepN': 17}>
+17.4904 	EXP 	RSVP_image_1: autoDraw = False
+17.4904 	EXP 	ISI_polygon_1: autoDraw = True
+17.5901 	EXP 	ISI_polygon_1: autoDraw = False
+17.5901 	EXP 	RSVP_image_1: image = './img/3.jpg'
+17.5901 	EXP 	RSVP_image_1: autoDraw = True
+18.1585 	EXP 	New trial (rep=18, index=0): <Trial 18 (0 in rep 18) data={'thisN': 18, 'thisTrialN': 0, 'thisRepN': 18}>
+18.1806 	EXP 	RSVP_image_1: autoDraw = False
+18.1806 	EXP 	ISI_polygon_1: autoDraw = True
+18.2736 	EXP 	ISI_polygon_1: autoDraw = False
+18.2736 	EXP 	RSVP_image_1: image = './img/6.jpg'
+18.2736 	EXP 	RSVP_image_1: autoDraw = True
+18.8587 	EXP 	New trial (rep=19, index=0): <Trial 19 (0 in rep 19) data={'thisN': 19, 'thisTrialN': 0, 'thisRepN': 19}>
+18.8736 	EXP 	RSVP_image_1: autoDraw = False
+18.8736 	EXP 	ISI_polygon_1: autoDraw = True
+18.9570 	EXP 	ISI_polygon_1: autoDraw = False
+18.9570 	EXP 	RSVP_image_1: image = './img/2.jpg'
+18.9570 	EXP 	RSVP_image_1: autoDraw = True
+19.5417 	EXP 	New trial (rep=20, index=0): <Trial 20 (0 in rep 20) data={'thisN': 20, 'thisTrialN': 0, 'thisRepN': 20}>
+19.5571 	EXP 	RSVP_image_1: autoDraw = False
+19.5571 	EXP 	ISI_polygon_1: autoDraw = True
+19.6570 	EXP 	ISI_polygon_1: autoDraw = False
+19.6570 	EXP 	RSVP_image_1: image = './img/3.jpg'
+19.6570 	EXP 	RSVP_image_1: autoDraw = True
+20.2420 	EXP 	New trial (rep=21, index=0): <Trial 21 (0 in rep 21) data={'thisN': 21, 'thisTrialN': 0, 'thisRepN': 21}>
+20.2570 	EXP 	RSVP_image_1: autoDraw = False
+20.2570 	EXP 	ISI_polygon_1: autoDraw = True
+20.3404 	EXP 	ISI_polygon_1: autoDraw = False
+20.3404 	EXP 	RSVP_image_1: image = './img/4.jpg'
+20.3404 	EXP 	RSVP_image_1: autoDraw = True
+20.9252 	EXP 	New trial (rep=22, index=0): <Trial 22 (0 in rep 22) data={'thisN': 22, 'thisTrialN': 0, 'thisRepN': 22}>
+20.9403 	EXP 	RSVP_image_1: autoDraw = False
+20.9403 	EXP 	ISI_polygon_1: autoDraw = True
+21.0403 	EXP 	ISI_polygon_1: autoDraw = False
+21.0403 	EXP 	RSVP_image_1: image = './img/3.jpg'
+21.0403 	EXP 	RSVP_image_1: autoDraw = True
+21.6086 	EXP 	New trial (rep=23, index=0): <Trial 23 (0 in rep 23) data={'thisN': 23, 'thisTrialN': 0, 'thisRepN': 23}>
+21.6236 	EXP 	RSVP_image_1: autoDraw = False
+21.6236 	EXP 	ISI_polygon_1: autoDraw = True
+21.7236 	EXP 	ISI_polygon_1: autoDraw = False
+21.7236 	EXP 	RSVP_image_1: image = './img/1.jpg'
+21.7236 	EXP 	RSVP_image_1: autoDraw = True
+22.3086 	EXP 	New trial (rep=24, index=0): <Trial 24 (0 in rep 24) data={'thisN': 24, 'thisTrialN': 0, 'thisRepN': 24}>
+22.3237 	EXP 	RSVP_image_1: autoDraw = False
+22.3237 	EXP 	ISI_polygon_1: autoDraw = True
+22.4070 	EXP 	ISI_polygon_1: autoDraw = False
+22.4070 	EXP 	RSVP_image_1: image = './img/6.jpg'
+22.4070 	EXP 	RSVP_image_1: autoDraw = True
+22.9919 	EXP 	New trial (rep=25, index=0): <Trial 25 (0 in rep 25) data={'thisN': 25, 'thisTrialN': 0, 'thisRepN': 25}>
+23.0071 	EXP 	RSVP_image_1: autoDraw = False
+23.0071 	EXP 	ISI_polygon_1: autoDraw = True
+23.1070 	EXP 	ISI_polygon_1: autoDraw = False
+23.1070 	EXP 	RSVP_image_1: image = './img/4.jpg'
+23.1070 	EXP 	RSVP_image_1: autoDraw = True
+23.6918 	EXP 	New trial (rep=26, index=0): <Trial 26 (0 in rep 26) data={'thisN': 26, 'thisTrialN': 0, 'thisRepN': 26}>
+23.7069 	EXP 	RSVP_image_1: autoDraw = False
+23.7069 	EXP 	ISI_polygon_1: autoDraw = True
+23.7903 	EXP 	ISI_polygon_1: autoDraw = False
+23.7903 	EXP 	RSVP_image_1: image = './img/2.jpg'
+23.7903 	EXP 	RSVP_image_1: autoDraw = True
+24.3753 	EXP 	New trial (rep=27, index=0): <Trial 27 (0 in rep 27) data={'thisN': 27, 'thisTrialN': 0, 'thisRepN': 27}>
+24.3903 	EXP 	RSVP_image_1: autoDraw = False
+24.3903 	EXP 	ISI_polygon_1: autoDraw = True
+24.4903 	EXP 	ISI_polygon_1: autoDraw = False
+24.4903 	EXP 	RSVP_image_1: image = './img/6.jpg'
+24.4903 	EXP 	RSVP_image_1: autoDraw = True
+25.0584 	EXP 	New trial (rep=28, index=0): <Trial 28 (0 in rep 28) data={'thisN': 28, 'thisTrialN': 0, 'thisRepN': 28}>
+25.0736 	EXP 	RSVP_image_1: autoDraw = False
+25.0736 	EXP 	ISI_polygon_1: autoDraw = True
+25.1736 	EXP 	ISI_polygon_1: autoDraw = False
+25.1736 	EXP 	RSVP_image_1: image = './img/3.jpg'
+25.1736 	EXP 	RSVP_image_1: autoDraw = True
+25.7587 	EXP 	New trial (rep=29, index=0): <Trial 29 (0 in rep 29) data={'thisN': 29, 'thisTrialN': 0, 'thisRepN': 29}>
+25.7737 	EXP 	RSVP_image_1: autoDraw = False
+25.7737 	EXP 	ISI_polygon_1: autoDraw = True
+25.8570 	EXP 	ISI_polygon_1: autoDraw = False
+25.8570 	EXP 	RSVP_image_1: image = './img/5.jpg'
+25.8570 	EXP 	RSVP_image_1: autoDraw = True
+26.4422 	EXP 	New trial (rep=30, index=0): <Trial 30 (0 in rep 30) data={'thisN': 30, 'thisTrialN': 0, 'thisRepN': 30}>
+26.4570 	EXP 	RSVP_image_1: autoDraw = False
+26.4570 	EXP 	ISI_polygon_1: autoDraw = True
+26.5569 	EXP 	ISI_polygon_1: autoDraw = False
+26.5569 	EXP 	RSVP_image_1: image = './img/3.jpg'
+26.5569 	EXP 	RSVP_image_1: autoDraw = True
+27.1424 	EXP 	New trial (rep=31, index=0): <Trial 31 (0 in rep 31) data={'thisN': 31, 'thisTrialN': 0, 'thisRepN': 31}>
+27.1574 	EXP 	RSVP_image_1: autoDraw = False
+27.1574 	EXP 	ISI_polygon_1: autoDraw = True
+27.2403 	EXP 	ISI_polygon_1: autoDraw = False
+27.2403 	EXP 	RSVP_image_1: image = './img/6.jpg'
+27.2403 	EXP 	RSVP_image_1: autoDraw = True
+27.8255 	EXP 	New trial (rep=32, index=0): <Trial 32 (0 in rep 32) data={'thisN': 32, 'thisTrialN': 0, 'thisRepN': 32}>
+27.8403 	EXP 	RSVP_image_1: autoDraw = False
+27.8403 	EXP 	ISI_polygon_1: autoDraw = True
+27.9402 	EXP 	ISI_polygon_1: autoDraw = False
+27.9402 	EXP 	RSVP_image_1: image = './img/5.jpg'
+27.9402 	EXP 	RSVP_image_1: autoDraw = True
+28.5086 	EXP 	New trial (rep=33, index=0): <Trial 33 (0 in rep 33) data={'thisN': 33, 'thisTrialN': 0, 'thisRepN': 33}>
+28.5237 	EXP 	RSVP_image_1: autoDraw = False
+28.5237 	EXP 	ISI_polygon_1: autoDraw = True
+28.6238 	EXP 	ISI_polygon_1: autoDraw = False
+28.6238 	EXP 	RSVP_image_1: image = './img/6.jpg'
+28.6238 	EXP 	RSVP_image_1: autoDraw = True
+29.2084 	EXP 	New trial (rep=34, index=0): <Trial 34 (0 in rep 34) data={'thisN': 34, 'thisTrialN': 0, 'thisRepN': 34}>
+29.2237 	EXP 	RSVP_image_1: autoDraw = False
+29.2237 	EXP 	ISI_polygon_1: autoDraw = True
+29.3237 	EXP 	ISI_polygon_1: autoDraw = False
+29.3237 	EXP 	RSVP_image_1: image = './img/4.jpg'
+29.3237 	EXP 	RSVP_image_1: autoDraw = True
+29.8917 	EXP 	New trial (rep=35, index=0): <Trial 35 (0 in rep 35) data={'thisN': 35, 'thisTrialN': 0, 'thisRepN': 35}>
+29.9070 	EXP 	RSVP_image_1: autoDraw = False
+29.9070 	EXP 	ISI_polygon_1: autoDraw = True
+30.0069 	EXP 	ISI_polygon_1: autoDraw = False
+30.0069 	EXP 	RSVP_image_1: image = './img/6.jpg'
+30.0069 	EXP 	RSVP_image_1: autoDraw = True
+30.5918 	EXP 	New trial (rep=36, index=0): <Trial 36 (0 in rep 36) data={'thisN': 36, 'thisTrialN': 0, 'thisRepN': 36}>
+30.6070 	EXP 	RSVP_image_1: autoDraw = False
+30.6070 	EXP 	ISI_polygon_1: autoDraw = True
+30.6902 	EXP 	ISI_polygon_1: autoDraw = False
+30.6902 	EXP 	RSVP_image_1: image = './img/1.jpg'
+30.6902 	EXP 	RSVP_image_1: autoDraw = True
+31.2751 	EXP 	New trial (rep=37, index=0): <Trial 37 (0 in rep 37) data={'thisN': 37, 'thisTrialN': 0, 'thisRepN': 37}>
+31.2903 	EXP 	RSVP_image_1: autoDraw = False
+31.2903 	EXP 	ISI_polygon_1: autoDraw = True
+31.3902 	EXP 	ISI_polygon_1: autoDraw = False
+31.3902 	EXP 	RSVP_image_1: image = './img/3.jpg'
+31.3902 	EXP 	RSVP_image_1: autoDraw = True
+31.9593 	EXP 	New trial (rep=38, index=0): <Trial 38 (0 in rep 38) data={'thisN': 38, 'thisTrialN': 0, 'thisRepN': 38}>
+31.9737 	EXP 	RSVP_image_1: autoDraw = False
+31.9737 	EXP 	ISI_polygon_1: autoDraw = True
+32.0737 	EXP 	ISI_polygon_1: autoDraw = False
+32.0737 	EXP 	RSVP_image_1: image = './img/4.jpg'
+32.0737 	EXP 	RSVP_image_1: autoDraw = True
+32.6584 	EXP 	New trial (rep=39, index=0): <Trial 39 (0 in rep 39) data={'thisN': 39, 'thisTrialN': 0, 'thisRepN': 39}>
+32.6737 	EXP 	RSVP_image_1: autoDraw = False
+32.6737 	EXP 	ISI_polygon_1: autoDraw = True
+32.7737 	EXP 	ISI_polygon_1: autoDraw = False
+32.7737 	EXP 	RSVP_image_1: image = './img/6.jpg'
+32.7737 	EXP 	RSVP_image_1: autoDraw = True
+33.3418 	EXP 	New trial (rep=40, index=0): <Trial 40 (0 in rep 40) data={'thisN': 40, 'thisTrialN': 0, 'thisRepN': 40}>
+33.3570 	EXP 	RSVP_image_1: autoDraw = False
+33.3570 	EXP 	ISI_polygon_1: autoDraw = True
+33.4569 	EXP 	ISI_polygon_1: autoDraw = False
+33.4569 	EXP 	RSVP_image_1: image = './img/3.jpg'
+33.4569 	EXP 	RSVP_image_1: autoDraw = True
+34.0418 	EXP 	New trial (rep=41, index=0): <Trial 41 (0 in rep 41) data={'thisN': 41, 'thisTrialN': 0, 'thisRepN': 41}>
+34.0570 	EXP 	RSVP_image_1: autoDraw = False
+34.0570 	EXP 	ISI_polygon_1: autoDraw = True
+34.1402 	EXP 	ISI_polygon_1: autoDraw = False
+34.1402 	EXP 	RSVP_image_1: image = './img/1.jpg'
+34.1402 	EXP 	RSVP_image_1: autoDraw = True
+34.7250 	EXP 	New trial (rep=42, index=0): <Trial 42 (0 in rep 42) data={'thisN': 42, 'thisTrialN': 0, 'thisRepN': 42}>
+34.7405 	EXP 	RSVP_image_1: autoDraw = False
+34.7405 	EXP 	ISI_polygon_1: autoDraw = True
+34.8404 	EXP 	ISI_polygon_1: autoDraw = False
+34.8404 	EXP 	RSVP_image_1: image = './img/6.jpg'
+34.8404 	EXP 	RSVP_image_1: autoDraw = True
+35.4085 	EXP 	New trial (rep=43, index=0): <Trial 43 (0 in rep 43) data={'thisN': 43, 'thisTrialN': 0, 'thisRepN': 43}>
+35.4237 	EXP 	RSVP_image_1: autoDraw = False
+35.4237 	EXP 	ISI_polygon_1: autoDraw = True
+35.5237 	EXP 	ISI_polygon_1: autoDraw = False
+35.5237 	EXP 	RSVP_image_1: image = './img/1.jpg'
+35.5237 	EXP 	RSVP_image_1: autoDraw = True
+36.1084 	EXP 	New trial (rep=44, index=0): <Trial 44 (0 in rep 44) data={'thisN': 44, 'thisTrialN': 0, 'thisRepN': 44}>
+36.1237 	EXP 	RSVP_image_1: autoDraw = False
+36.1237 	EXP 	ISI_polygon_1: autoDraw = True
+36.2237 	EXP 	ISI_polygon_1: autoDraw = False
+36.2237 	EXP 	RSVP_image_1: image = './img/5.jpg'
+36.2237 	EXP 	RSVP_image_1: autoDraw = True
+36.7918 	EXP 	New trial (rep=45, index=0): <Trial 45 (0 in rep 45) data={'thisN': 45, 'thisTrialN': 0, 'thisRepN': 45}>
+36.8069 	EXP 	RSVP_image_1: autoDraw = False
+36.8069 	EXP 	ISI_polygon_1: autoDraw = True
+36.9070 	EXP 	ISI_polygon_1: autoDraw = False
+36.9070 	EXP 	RSVP_image_1: image = './img/4.jpg'
+36.9070 	EXP 	RSVP_image_1: autoDraw = True
+37.4917 	EXP 	New trial (rep=46, index=0): <Trial 46 (0 in rep 46) data={'thisN': 46, 'thisTrialN': 0, 'thisRepN': 46}>
+37.5070 	EXP 	RSVP_image_1: autoDraw = False
+37.5070 	EXP 	ISI_polygon_1: autoDraw = True
+37.5903 	EXP 	ISI_polygon_1: autoDraw = False
+37.5903 	EXP 	RSVP_image_1: image = './img/1.jpg'
+37.5903 	EXP 	RSVP_image_1: autoDraw = True
+38.1751 	EXP 	New trial (rep=47, index=0): <Trial 47 (0 in rep 47) data={'thisN': 47, 'thisTrialN': 0, 'thisRepN': 47}>
+38.1904 	EXP 	RSVP_image_1: autoDraw = False
+38.1904 	EXP 	ISI_polygon_1: autoDraw = True
+38.2904 	EXP 	ISI_polygon_1: autoDraw = False
+38.2904 	EXP 	RSVP_image_1: image = './img/4.jpg'
+38.2904 	EXP 	RSVP_image_1: autoDraw = True
+38.8584 	EXP 	New trial (rep=48, index=0): <Trial 48 (0 in rep 48) data={'thisN': 48, 'thisTrialN': 0, 'thisRepN': 48}>
+38.8736 	EXP 	RSVP_image_1: autoDraw = False
+38.8736 	EXP 	ISI_polygon_1: autoDraw = True
+38.9737 	EXP 	ISI_polygon_1: autoDraw = False
+38.9737 	EXP 	RSVP_image_1: image = './img/2.jpg'
+38.9737 	EXP 	RSVP_image_1: autoDraw = True
+39.5584 	EXP 	New trial (rep=49, index=0): <Trial 49 (0 in rep 49) data={'thisN': 49, 'thisTrialN': 0, 'thisRepN': 49}>
+39.5736 	EXP 	RSVP_image_1: autoDraw = False
+39.5736 	EXP 	ISI_polygon_1: autoDraw = True
+39.6570 	EXP 	ISI_polygon_1: autoDraw = False
+39.6570 	EXP 	RSVP_image_1: image = './img/3.jpg'
+39.6570 	EXP 	RSVP_image_1: autoDraw = True
+40.2418 	EXP 	New trial (rep=50, index=0): <Trial 50 (0 in rep 50) data={'thisN': 50, 'thisTrialN': 0, 'thisRepN': 50}>
+40.2570 	EXP 	RSVP_image_1: autoDraw = False
+40.2570 	EXP 	ISI_polygon_1: autoDraw = True
+40.3570 	EXP 	ISI_polygon_1: autoDraw = False
+40.3570 	EXP 	RSVP_image_1: image = './img/1.jpg'
+40.3570 	EXP 	RSVP_image_1: autoDraw = True
+40.9417 	EXP 	New trial (rep=51, index=0): <Trial 51 (0 in rep 51) data={'thisN': 51, 'thisTrialN': 0, 'thisRepN': 51}>
+40.9569 	EXP 	RSVP_image_1: autoDraw = False
+40.9569 	EXP 	ISI_polygon_1: autoDraw = True
+41.0404 	EXP 	ISI_polygon_1: autoDraw = False
+41.0404 	EXP 	RSVP_image_1: image = './img/2.jpg'
+41.0404 	EXP 	RSVP_image_1: autoDraw = True
+41.6252 	EXP 	New trial (rep=52, index=0): <Trial 52 (0 in rep 52) data={'thisN': 52, 'thisTrialN': 0, 'thisRepN': 52}>
+41.6404 	EXP 	RSVP_image_1: autoDraw = False
+41.6404 	EXP 	ISI_polygon_1: autoDraw = True
+41.7403 	EXP 	ISI_polygon_1: autoDraw = False
+41.7403 	EXP 	RSVP_image_1: image = './img/102.jpg'
+41.7403 	EXP 	RSVP_image_1: autoDraw = True
+42.3085 	EXP 	New trial (rep=53, index=0): <Trial 53 (0 in rep 53) data={'thisN': 53, 'thisTrialN': 0, 'thisRepN': 53}>
+42.3237 	EXP 	RSVP_image_1: autoDraw = False
+42.3237 	EXP 	ISI_polygon_1: autoDraw = True
+42.4236 	EXP 	ISI_polygon_1: autoDraw = False
+42.4236 	EXP 	RSVP_image_1: image = './img/4.jpg'
+42.4236 	EXP 	RSVP_image_1: autoDraw = True
+43.0086 	EXP 	New trial (rep=54, index=0): <Trial 54 (0 in rep 54) data={'thisN': 54, 'thisTrialN': 0, 'thisRepN': 54}>
+43.0236 	EXP 	RSVP_image_1: autoDraw = False
+43.0236 	EXP 	ISI_polygon_1: autoDraw = True
+43.1237 	EXP 	ISI_polygon_1: autoDraw = False
+43.1237 	EXP 	RSVP_image_1: image = './img/3.jpg'
+43.1237 	EXP 	RSVP_image_1: autoDraw = True
+43.6918 	EXP 	New trial (rep=55, index=0): <Trial 55 (0 in rep 55) data={'thisN': 55, 'thisTrialN': 0, 'thisRepN': 55}>
+43.7069 	EXP 	RSVP_image_1: autoDraw = False
+43.7069 	EXP 	ISI_polygon_1: autoDraw = True
+43.8070 	EXP 	ISI_polygon_1: autoDraw = False
+43.8070 	EXP 	RSVP_image_1: image = './img/6.jpg'
+43.8070 	EXP 	RSVP_image_1: autoDraw = True
+44.3918 	EXP 	New trial (rep=56, index=0): <Trial 56 (0 in rep 56) data={'thisN': 56, 'thisTrialN': 0, 'thisRepN': 56}>
+44.4071 	EXP 	RSVP_image_1: autoDraw = False
+44.4071 	EXP 	ISI_polygon_1: autoDraw = True
+44.4904 	EXP 	ISI_polygon_1: autoDraw = False
+44.4904 	EXP 	RSVP_image_1: image = './img/5.jpg'
+44.4904 	EXP 	RSVP_image_1: autoDraw = True
+45.0751 	EXP 	New trial (rep=57, index=0): <Trial 57 (0 in rep 57) data={'thisN': 57, 'thisTrialN': 0, 'thisRepN': 57}>
+45.0904 	EXP 	RSVP_image_1: autoDraw = False
+45.0904 	EXP 	ISI_polygon_1: autoDraw = True
+45.1904 	EXP 	ISI_polygon_1: autoDraw = False
+45.1904 	EXP 	RSVP_image_1: image = './img/1.jpg'
+45.1904 	EXP 	RSVP_image_1: autoDraw = True
+45.7585 	EXP 	New trial (rep=58, index=0): <Trial 58 (0 in rep 58) data={'thisN': 58, 'thisTrialN': 0, 'thisRepN': 58}>
+45.7737 	EXP 	RSVP_image_1: autoDraw = False
+45.7737 	EXP 	ISI_polygon_1: autoDraw = True
+45.8737 	EXP 	ISI_polygon_1: autoDraw = False
+45.8737 	EXP 	RSVP_image_1: image = './img/5.jpg'
+45.8737 	EXP 	RSVP_image_1: autoDraw = True
+46.4586 	EXP 	New trial (rep=59, index=0): <Trial 59 (0 in rep 59) data={'thisN': 59, 'thisTrialN': 0, 'thisRepN': 59}>
+46.4739 	EXP 	RSVP_image_1: autoDraw = False
+46.4739 	EXP 	ISI_polygon_1: autoDraw = True
+46.5570 	EXP 	ISI_polygon_1: autoDraw = False
+46.5570 	EXP 	RSVP_image_1: image = './img/2.jpg'
+46.5570 	EXP 	RSVP_image_1: autoDraw = True
+47.1417 	EXP 	New trial (rep=60, index=0): <Trial 60 (0 in rep 60) data={'thisN': 60, 'thisTrialN': 0, 'thisRepN': 60}>
+47.1570 	EXP 	RSVP_image_1: autoDraw = False
+47.1570 	EXP 	ISI_polygon_1: autoDraw = True
+47.2570 	EXP 	ISI_polygon_1: autoDraw = False
+47.2570 	EXP 	RSVP_image_1: image = './img/5.jpg'
+47.2570 	EXP 	RSVP_image_1: autoDraw = True
+47.8419 	EXP 	New trial (rep=61, index=0): <Trial 61 (0 in rep 61) data={'thisN': 61, 'thisTrialN': 0, 'thisRepN': 61}>
+47.8570 	EXP 	RSVP_image_1: autoDraw = False
+47.8570 	EXP 	ISI_polygon_1: autoDraw = True
+47.9403 	EXP 	ISI_polygon_1: autoDraw = False
+47.9403 	EXP 	RSVP_image_1: image = './img/3.jpg'
+47.9403 	EXP 	RSVP_image_1: autoDraw = True
+48.5905 	INFO 	Keyboard events cleared
+48.5905 	EXP 	RSVP_image_1: autoDraw = False
+48.5905 	EXP 	KeepInMindRecog_image_1: image = './img/1.jpg'
+48.5905 	EXP 	KeepInMindRecog_image_2: image = './img/5.jpg'
+48.5905 	EXP 	KeepInMindRecog_image_3: image = './img/2.jpg'
+48.5905 	EXP 	KeepInMindRecog_image_4: image = './img/6.jpg'
+48.5905 	EXP 	KeepInMindRecog_image_5: image = './img/4.jpg'
+48.5905 	EXP 	KeepInMindRecog_image_6: image = './img/3.jpg'
+48.5905 	EXP 	KeepInMindRecog_image_1: autoDraw = True
+48.5905 	EXP 	KeepInMindRecog_image_2: autoDraw = True
+48.5905 	EXP 	KeepInMindRecog_image_3: autoDraw = True
+48.5905 	EXP 	KeepInMindRecog_image_4: autoDraw = True
+48.5905 	EXP 	KeepInMindRecog_image_5: autoDraw = True
+48.5905 	EXP 	KeepInMindRecog_image_6: autoDraw = True
+50.5904 	EXP 	KeepInMindRecog_image_1: autoDraw = False
+50.5904 	EXP 	KeepInMindRecog_image_2: autoDraw = False
+50.5904 	EXP 	KeepInMindRecog_image_3: autoDraw = False
+50.5904 	EXP 	KeepInMindRecog_image_4: autoDraw = False
+50.5904 	EXP 	KeepInMindRecog_image_5: autoDraw = False
+50.5904 	EXP 	KeepInMindRecog_image_6: autoDraw = False
+274.4915 	DATA 	Keypress: 5
+274.4962 	EXP 	Device response: <KeyPress from None: t=274.48598149899044, value=5, duration=None>
+274.5071 	EXP 	KeepInMindRecog_image_1: autoDraw = False
+274.5071 	EXP 	KeepInMindRecog_image_2: autoDraw = False
+274.5071 	EXP 	KeepInMindRecog_image_3: autoDraw = False
+274.5071 	EXP 	KeepInMindRecog_image_4: autoDraw = False
+274.5071 	EXP 	KeepInMindRecog_image_5: autoDraw = False
+274.5071 	EXP 	KeepInMindRecog_image_6: autoDraw = False
+274.5071 	EXP 	judge_text_1: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+274.5071 	EXP 	judge_text_1: height = np.float64(0.05)
+274.5071 	EXP 	judge_text_1: height = np.float64(0.05)
+274.5071 	EXP 	judge_text_1: height = np.float64(0.05)
+274.5071 	EXP 	judge_text_1: text = 'pity'
+274.5071 	EXP 	judge_text_1: autoDraw = True
+274.5593 	EXP 	Device response: <KeyPress from None: t=274.48598149899044, value=5, duration=0.0643171250121668>
+276.4921 	EXP 	New trial (rep=0, index=1): <Trial 1 (1 in rep 0) data={'relpicture': './img/6.jpg', 'recog': './img/5.jpg', 'correct': 'n', 'irr_1': './img/1.jpg', 'irr_2': './img/2.jpg', 'irr_3': './img/3.jpg', 'irr_4': './img/4.jpg', 'irr_5': './img/5.jpg', 'thisN': 1, 'thisTrialN': 1, 'thisRepN': 0}>
+276.6073 	EXP 	judge_text_1: autoDraw = False
+276.6073 	EXP 	KeepInMindSlide_image_1: image = './img/6.jpg'
+276.6073 	EXP 	KeepInMindSlide_image_1: autoDraw = True
+276.6073 	EXP 	KeepInMindSlide_text_1: autoDraw = True
+278.5906 	EXP 	KeepInMindSlide_image_1: autoDraw = False
+278.5906 	EXP 	KeepInMindSlide_text_1: autoDraw = False
+278.5906 	EXP 	fixation_polygon_1: autoDraw = True
+279.2758 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+279.2906 	EXP 	fixation_polygon_1: autoDraw = False
+279.2906 	EXP 	ISI_polygon_1: autoDraw = True
+279.3905 	EXP 	ISI_polygon_1: autoDraw = False
+279.3905 	EXP 	RSVP_image_1: image = './img/6.jpg'
+279.3905 	EXP 	RSVP_image_1: autoDraw = True
+279.7864 	DATA 	Keypress: escape
+279.7913 	EXP 	Device response: <KeyPress from None: t=279.75919791599154, value=escape, duration=None>
+279.8589 	EXP 	Device response: <KeyPress from None: t=279.75919791599154, value=escape, duration=0.09825037501286715>
+279.8589 	EXP 	oddball_ch3: status = STOPPED
+279.8738 	EXP 	RSVP_image_1: autoDraw = False
+279.8754 	EXP 	oddball_ch3: status = STOPPED
+279.8868 	INFO 	saved data to '/Users/cheng/Desktop/EEG_study/eprime-like/data/pilot_oddball_ch3_2026-06-25_01h22.26.308.csv'
+279.8879 	INFO 	saved data to /Users/cheng/Desktop/EEG_study/eprime-like/data/pilot_oddball_ch3_2026-06-25_01h22.26.308.psydat
+280.0629 	DEBUG 	Saving data for oddball_ch3 ExperimentHandler
+280.0639 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
