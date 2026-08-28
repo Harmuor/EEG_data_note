@@ -47,7 +47,7 @@ colorbar;
 % 还是准备首先加载数据
 % 这个计算太耗时间而且我的mac只是丐版air，所以先拿6个被试跑一跑算了
 participants = {'umeeg101', 'umeeg102', 'umeeg103', 'umeeg104', ...
-                'umeeg105', 'umeeg106'};
+                'umeeg105', 'umeeg106', 'umeeg107'};
 
 cond = {'rel', 'irr', 'odd'};
 
