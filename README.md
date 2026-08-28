@@ -6,9 +6,11 @@
 
 3. Research group of brain and cognitive science (洪城课题组). [EEGLAB tutorial for mater program students (零基础脑电数据处理教程)](https://www.bilibili.com/video/BV1qj411w7wZ/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=69f12cd3b0fc268b7bb22a55c4f209d7 'click it'). Jiangxi Normal university.
 
-4. `MATLAB` edition: 2026a
+4. `MATLAB` edition: 2026a.
 
-5. `EEGLAB` edition: 2026.0.0
+5. `EEGLAB` edition: 2026.0.0.
+
+6.  `FieldTrip` edition: 20260812.
 
 # Eprime-like
 
