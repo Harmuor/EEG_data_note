@@ -2606,7 +2606,7 @@ The principle is to read the original literature -> conduct test (maybe not form
 
 # Ch12 Conclusion & discussion writing
 
-# Extra content
+# Extra content: time-freq & cluster-based permutation
 
 This video tutorial is highly recommended as it's more practical and technically detailed (for `MATLAB` pipeline).
 
@@ -3120,9 +3120,11 @@ Now we have time-frequency data, a 5-dimension array, `ALL`, recording ERSP (ERS
     
 2. prepare the design matrix telling `FieldTrip` the structure of our conditions/groups inside the data
 
-3. create `cfg` variable to adjust statistical preferences and parameters
+3. prepare the neighbor matrix telling `FieldTrip` the spatial relation between electrodes, even if we wouldn't apply channel cluster, namely `cfg.minnbchan = 0`
 
-4. implement the analysis and check outputs
+4. create `cfg` variable to adjust statistical preferences and parameters
+
+5. implement the analysis and check outputs
 
 <font color = 'red'>**By the way, Some dialogue of system security warnning would interrupt the processing**</font>.
 
@@ -3268,15 +3270,10 @@ cfg.clustertail = 0;
 cfg.numrandomization = 1000;
 
 
-% 是否做空间cluster
-cfg.minnbchan = 1;
-
-if 1
 % 提供邻近矩阵
 cfg.neighbours = neighbours;
-% 至少两个邻居才能形成簇
+% 至少两个邻居才能形成簇，为0时就是干脆不做空间簇了
 cfg.minnbchan  = 2;
-end
 
 
 % 投喂设计矩阵
@@ -3462,6 +3459,10 @@ topoplot(topo_data, locs, ...
 colorbar;
 ```
 
+# Extra content 2
+
+
+
 调参 tweak parameters
 低频/高频末端 lower-/higher frequency end
 在xxxzhi中 in the midst of
@@ -3512,6 +3513,7 @@ give rise to
 ...的可取/可称道之处 there is something to be said for...
 一个人的形象 one's image
 retract A from B 从B减损/削弱A，也就是削弱B
+
 
 
 
