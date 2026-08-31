@@ -1,3 +1,7 @@
+# A study note for electroencephalography (EEG) data analysis
+
+Here's my personal note to learn how to do batch process, visualisation, and statistics onto EEG data. Sorry for Chinese code comments bcz programming has occupied the majority of my brain's computational power...
+
 # Reference
 
 1. Spapé, M. (2022). A psychologist’s guide to EEG: The electric study of the mind. SAGE Publications Ltd.
