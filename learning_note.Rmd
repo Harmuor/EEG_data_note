@@ -6,7 +6,7 @@ output:
   html_document: 
     toc: true
     toc_float: true
-    toc_depth: 1
+    toc_depth: 2
 ---
 
 Reference: 
@@ -17,9 +17,11 @@ Reference:
 
 3. Research group of brain and cognitive science (洪城课题组). [EEGLAB tutorial for mater program students (零基础脑电数据处理教程)](https://www.bilibili.com/video/BV1qj411w7wZ/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=69f12cd3b0fc268b7bb22a55c4f209d7 'click it'). Jiangxi Normal university.
 
-4. `MATLAB` edition: 2026a
+4. `MATLAB` edition: 2026a.
 
-5. `EEGLAB` edition: 2026.0.0
+5. `EEGLAB` edition: 2026.0.0.
+
+6. `FieldTrip` edition: 20260812.
 
 # Ch1 EEG in theory
 
@@ -833,11 +835,11 @@ Administering the filter affects the shape of EEG components. For example, addin
 
 The filter can't 100% remove the artifact evoked by eye blink or muscle, which influence a wide range of frequency, even through we apply a high- and low-pass filter. But to a optimistic side, Even if we obtain a very angry signal for a real potential that is actually a smooth line, we are able to approach the real value by averaging the recorded signal across each timepoints. In the practice, we often don't use notch filter on the line power interference since there is already a Faraday cage.
 
-```{r Ch7_import_package, include=FALSE}
+```{r Ch7_import_package, include = F}
 library(tidyverse)
 ```
 
-```{r Ch7_average_signal, echo=FALSE}
+```{r Ch7_average_signal, echo = F}
 time_point <- seq(0, 1, length.out = 1000)
 
 real_sig <- -4 * time_point^2 + 4 * time_point
@@ -2604,7 +2606,7 @@ The principle is to read the original literature -> conduct test (maybe not form
 
 # Ch12 Conclusion & discussion writing
 
-# Extra content form Hongcheng research group's tutorial
+# Extra content
 
 This video tutorial is highly recommended as it's more practical and technically detailed (for `MATLAB` pipeline).
 
@@ -2812,9 +2814,653 @@ end
 
 ### Principle
 
+But I think this [video](https://www.youtube.com/watch?v=jnxqHcObNK4 'click it') is better than Hongcheng research group's tutorial for this part
+
+The drawback of time field: lost event-related synchronization (ERS) and event-related de-synchronization (ERD). Specifically, the ERS & ERD (they're power phenomena) are time-locked but not phase-locked. Therefore aggregation across epochs would erase/neutralize such oscillatory information. One solution is aggregate data by converting data into envelope (包络线) form, remaining power information but giving up phase information. For this method, the increasing in power is called ERS, while the decreasing is ERD.
+
+![The left: waveform data; The right: envelope information. The bottom is the result of average across epochs](./note_image/Envelope.png)
+
+<br>
+
+The drawback of frequency field: It's very obvious that Fourier transformation loses time information.
+
+![Fourier trans makes two waveforms the same](./note_image/loss_time.png)
+
+<br>
+
+Short-time Fourier transformation (短时傅里叶变换): Putting a slipping time window moving along the time series. This time window would administers Fourier transformation onto data within it and assigns the output value to the middle time point. This window normally has a range <font color = 'red'>**from 200 ms to 300 ms**</font>, thereby the baseline length for STFT should be greater than 200 ms (200 ms baseline is used in Spapé's ERP analysis).
+
+|ERP|STFT|
+|:---:|:---:|
+|[-0.2, 0.8]|[-1, 2]|
+
+However, for data point at the upper and lower edge, about a half of time window takes a treat-as-0 strategy to achieve a interpolation-like operation. So we would throw these data points away in the statistical analysis.
+
+But wavelet transformation seems more popular now. The slipping window in STFT is fixed whereas it is changable in wavelet transformation.
+
+### STFT
+
+This section requires an in-house script from Hongcheng research group.
+
+```{MATLAB stft}
+
+```
+
+time-frequency transformation -> average aggregation
+
+### Wavelet transformation
+
+I didn't follow the tutorial that uses STFT as it has a fixed time window. That sort of window remains fixed length at either low or high frequency band, which may cause some issues. For example, if you use a short window at 1 Hz, you wouldn't get any information. On the contrary, using a long window at 30 Hz may lead to decreased temporal resolution. To solve this trade-off, wavelet provides a changable cycle: employing long time window at low frequency while employing short time window at high frequency.
+
+```{MATLAB wavelet template}
+% 然后就是对其中一个通道做小波变换
+[ersp, itc, powbase, times, freqs] = ...
+newtimef(EEG.data(1, :, :), ...
+         EEG.pnts, ...
+         [EEG.xmin, EEG.xmax] * 1000, ...
+         EEG.srate, ...
+         [1, 0.8], ...
+         'ntimesout', 300, ...
+         'nfreqs', 80, ...
+         'freqs', [4, 30], ...
+         'baseline', [EEG.xmin * 1000, 0], ...
+         'plotersp', 'off', ...
+         'plotitc', 'off');
+```
+
+As the chunk showing, so many important parameters... But no worry, the first four is vary basic, just data material to be used, among which `EEG.pnts` = `EEG.srate` * (`EEG.xmax` - `EEG.xmin`) in principle.
+
+Then `[1 0.8]` is about the number of cycle. That's saying "1 cycles at lowest frequency and 0.8 cycle at highest frequency". However, we need to fine this parameter til it fits our data time, sample rate, & `freqs`. Specifically, the current data has 1 second for  each epoch, so the time is 1. Then the lowest frequency of analysis is 4. So the $\text{window length} = \frac{\text{cycles}}{\text{frequency}} = 0.25$. This means our data time should not less than 1 second to conduct this transformation ($\text{window length} \le (\text{EEG.xmax} - \text{EEG.xmin})$). Apart from that, the baseline should be able to contain at least 1 midpoint of a cycle. SO:
+
+1. <u>The whole time of a epoch should be able to contain one longest cycle.</u>
+
+2. <u>The baseline time should have at least one valid midpoint of the longest cycle.</u>
+
+The parameter `freqs` is the range of frequency to be analyzed. The parameter `nfreqs` controls how many frequency points and `ntimesout` is about how many time points the output has.
+
+P.S. the `ferqs` and `times` remains consistency across participants and conditions as long as they share the same sample rate and epoch length.
+
+```{MATLAB group_wavelet}
+% 下面开始组水平的不同条件绘图
+% 还是准备首先加载数据
+% 这个计算太耗时间而且我的mac只是丐版air，所以先拿两个被试跑一跑算了
+participants = {'umeeg101', 'umeeg102'};
+
+cond = {'rel', 'irr', 'odd'};
 
 
-## Conclude a paper
+% 再写个计数君
+count = 0;
+
+% 需要写一个总数，这里我知道每个条件的试次数量是不一定的，但是至少输出的数据结构是一定的
+% 就是2个被试，3种条件，70个通道，100个频率点，100个时间点
+total = 2 * 3 * 70;
+
+
+% 正确的时频分析逻辑仍然是先按通道将数据傅立叶变换，但是不要叠加
+% 把一个个体所有数据傅立叶变换以后再叠加，最后汇总为一个组的频域数据
+for cpar = 1:length(participants)
+    for ccond = 1:length(cond)
+
+        % 加载数据
+        EEG = pop_loadset('filename', ...
+                          [participants{cpar} '_11_' cond{ccond} '.set'], ...
+                          'filepath', ...
+                          '/Users/cheng/Desktop/EEG_study/data_for_study/Chapter 11/data');
+
+        % 对每个通道做小波变换然后叠加平均为一个被试某个条件的
+        for cchan = 1:length(EEG.chanlocs)
+            [temp(cchan, :, :), ~, ~, temp_t, temp_f] = ...
+                newtimef(EEG.data(cchan, :, :), ...
+                         EEG.pnts, ...
+                         [EEG.xmin, EEG.xmax] * 1000, ...
+                         EEG.srate, ...
+                         [1, 0.5], ...
+                         'freqs', [4, 30], ...
+                         'nfreqs', 80, ...
+                         'ntimesout', 300, ...
+                         'baseline', [EEG.xmin * 1000, 0], ...
+                         'plotersp', 'off', ...
+                         'plotitc', 'off' ...
+                         );
+
+            % 这里用条件控制只保存一次时间和频率轴
+            if cchan == 1 && ccond == 1 && cpar == 1
+                times = temp_t; freqs = temp_f;
+            end
+
+            % 清除缓存
+            clear temp_t temp_f;
+
+            % 然后计数
+            count = count + 1;
+            fprintf('current pregress: %.2f %% \n', 100 * count / total)
+            drawnow;   % 强制刷新
+        end
+
+        % 最后用ALL存储数据：被试；条件；通道；频率；时间
+        ALL(cpar, ccond, :, :, :) = temp;
+        clear temp;
+    end
+end
+
+locs = EEG.chanlocs;
+
+% 保存一下数据万一以后用
+save('ALL.mat', 'ALL', 'times', 'freqs', 'locs');
+```
+
+However, wavelet still fail to get rid of trading-off between temporal and frequency resolution. For instance, long time window at low frequency brings low temporal but high frequency resolution, vice versa.
+
+### Feature plot
+
+3 conditions in tutorial data, that's why we created 3 sub-plots.
+
+```{MATLAB time_freq_plot}
+%%
+% 终于就是组平均了
+
+group = squeeze(mean(ALL, 1));
+
+% 然后画时频图
+% colorbar这个咋统一是个艺术
+subplot(311);
+imagesc(times, freqs, squeeze(group(1, 1, :, :)));
+title('relevant condition')
+xlabel('times');
+ylabel('dB')
+axis xy;
+colorbar
+
+subplot(312);
+imagesc(times, freqs, squeeze(group(2, 1, :, :)));
+xlabel('times');
+ylabel('dB')
+title('irrelevant condition')
+axis xy;
+colorbar
+
+subplot(313);
+imagesc(times, freqs, squeeze(group(3, 1, :, :)));
+xlabel('times');
+ylabel('dB')
+title('oddball condition')
+axis xy;
+colorbar
+```
+
+Then here's topoplot.
+
+```{MATLAB topo_tf}
+%%
+% 然后画地形图
+
+id_delta = find(freqs >= 4 & freqs <= 7);
+id_time = find(times >= 250 & times < 350);
+
+topo_data = squeeze(mean(group(1, :, id_delta, id_time), [3, 4]));
+
+figure;
+topoplot(topo_data, locs, ...
+         'electrodes', 'on', ...
+         'maplimits', [-1, 1]);
+colorbar;
+title('Rel condition: 4–7 Hz, 250–350 ms');
+```
+
+### Statistics
+
+Below is the content from Hongcheng research group's tutorial. It's classical point-wise test with FDR correction. Too classical and old-fashion. Here is just for learning not for future use.
+
+```{MATLAB time_freq_statistics_classical}
+%%
+% 首先先用俩情况的，学一下逐点的t检验
+% 对于两种情况下每一个时频点进行逐点t检验
+
+for cfreq = 1:size(ALL, 4)
+    for ctime = 1:size(ALL, 5)
+        % 准备两组数据
+        data_1 = squeeze(ALL(:, 1, 17, cfreq, ctime));
+        data_2 = squeeze(ALL(:, 2, 17, cfreq, ctime));
+
+        % 然后收集p值和t分数
+        % ttest2是配对样本t，普通的就是ttest
+        [~, temp_p, ~, temp_t] = ...
+            ttest2(data_1, data_2);
+
+        p_value(cfreq, ctime) = temp_p;
+        t_value(cfreq, ctime) = temp_t.tstat;
+    end
+end
+
+clear temp_p temp_t data_1 data_2 cfreq ctime;
+
+
+% 如果是（单因素）方差分析就是
+for cfreq = 1:size(ALL, 4)
+    for ctime = 1:size(ALL, 5)
+
+        % 这次把三种条件全带上
+        % 然后其实就是一个实实在在的表格，行是观测，列是组
+        data_3 = squeeze(ALL(:, :, 17, cfreq, ctime));
+
+        % 就直接单因素anova就行，off是关闭画图
+        % [~, ans2] = anova1(data_3, {'rel', 'irr', 'odd'}, 'off');
+        [~, ans2] = anova1(data_3, [], 'off');       
+
+        % 存答案
+        f_value(cfreq, ctime) = ans2{2, 5};
+        p_value(cfreq, ctime) = ans2{2, 6};
+    end
+end
+
+clear ans2 data_3 cfreq ctime;
+
+
+% 然后洪城课题组用了fdr矫正，但还是逐点的思想，这里用t检验做例子
+% 据说相当严格，不过你就可以用masked那个变量画新的图
+[p_fdr, p_masked] = fdr(p_value, 0.05);
+
+
+% 画图
+imagesc(times, freqs, p_value);
+axis xy;
+colorbar;
+caxis([0, 0.05]);  %这一步主要是凸显显著的数据
+
+% 或者也可以用t分数画图
+% 我知道很丑
+imagesc(times, freqs, t_value);
+axis xy;
+colorbar;
+```
+
+I saw Liu Zhenghao used piont-wise comparison with cluster-based permutation (But they said it's achieved by `Fieldtrip`, here's an [article](https://natmeg.se/ft_statistics/statistics.html) and a [video](https://www.bilibili.com/video/BV1qb4y1t7ah/?vd_source=69f12cd3b0fc268b7bb22a55c4f209d7) talking about cluster-based permutation). So,
+
+1. point-wise test
+
+2. summarize the significant points into clusters
+
+3. record the cluster's effect value (sum of all sigficant points within it)
+
+4. permutation across conditions/groups and repeat the steps above
+
+5. obtain the null distribution of cluster's effect value after permutation
+
+6. find the 5% quantile of the null distribution for example and its cluster statistics is now the threshold
+
+```{r demo_permutation, echo = F}
+n <- rnorm(10000, mean = 15, sd = 1)
+th <- quantile(n, 0.95)
+
+ggplot() + 
+  geom_density(aes(n), 
+               linewidth = 1) + 
+  geom_vline(xintercept = th, 
+             linetype = 'dashed', color = 'blue') + 
+  annotate('text', 
+           label = '<- this is the threshold \nof 5% quantile', 
+           x = 18, y = 0.1) + 
+  theme_bw() + 
+  labs(title = 'The null distribution of cluster\'s statistics', 
+       x = 'Cluster\'s statistics = sum of the point value within it', 
+       y = 'Probability density') + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+<br>
+
+Now we have time-frequency data, a 5-dimension array, `ALL`, recording ERSP (ERSP = Event‑Related Spectral Perturbation) of every participants, conditions, channels, frequency bands, and time points. The work flow of `FieldTrip` follows:
+
+1. convert our data into certain form that can be recognized by `FieldTrip`
+
+    - `timelock` for ERP (time field)
+    
+    - `freq` for ferquency field and time-frequency field
+    
+2. prepare the design matrix telling `FieldTrip` the structure of our conditions/groups inside the data
+
+3. create `cfg` variable to adjust statistical preferences and parameters
+
+4. implement the analysis and check outputs
+
+<font color = 'red'>**By the way, Some dialogue of system security warnning would interrupt the processing**</font>.
+
+```{MATLAB cluster_permutation}
+% 初始化
+clc; clear all;
+
+% 设置路径
+cd('/Users/cheng/Desktop/EEG_study/data_for_study/self_study/freq_ana');
+
+
+%%
+% 书接上回，我试试cluster-based permutation聚类置换检验
+% 似乎终究绕不开field trip，和eeglab一样的添加方式
+% 然后如果用field trip上面的逐点检验就可以不写了
+
+
+% 首先我们已经有一个整理好的数据ALL了，可以由此进行检验
+% 被试；条件；通道；频率；时间
+load('./ALL.mat');
+
+
+%%
+% 开始学习fieldtrip代码
+
+% 不过在开始之前，我们仍然可以对通道和时间进行选择以达到ROI的效果
+% 然后在构建freq或者timelock结构的时候只保留特定已选定的通道
+
+% 假如我们只做17号通道的，那么只需要按需要取数据子集就好
+% 然后通道这个维度也不要压缩，在freq和邻近矩阵输入通道数据的时候就也要调整
+% 还有一个遗憾就是，不推荐f检验而推荐t检验两两比较
+ALL = ALL(:, 1:2, :, :, :);
+
+
+%%
+% 然后构造fieldtrip的freq结构
+
+% 准备一个胞体，然后每个子胞体是一个空结构体
+freq = [];
+
+% 通道信息
+% 这里就可以选通道
+freq.label = {locs.labels};
+% 频域轴
+freq.freq = freqs;
+% 时间轴
+freq.time = times;
+
+% 告诉freq结构被提取的数据维度信息
+% 被试条件(rpt)；通道；频率；时间
+freq.dimord = 'rpt_chan_freq_time';
+
+% 然后给powspctrm数据
+% 这里需要把被试和条件维度给合并，问就是fieldtrip需要
+[npar, ncond, nchan, nfreq, ntime] = size(ALL);
+ALL = reshape(ALL, [npar * ncond, nchan, nfreq, ntime]);
+freq.powspctrm = ALL;
+
+
+%%
+if 1
+% 这一节主要是防止以后万一要算空间簇，那么就是构建邻近矩阵
+% 首先需要构造一个fieldtrip能读懂的电极位置信息表
+locs_changed = [];
+
+% 通道名
+locs_changed.label   = {locs.labels};
+% 电极坐标
+locs_changed.elecpos = [[locs.X]', [locs.Y]', [locs.Z]'];
+% 对 EEG 来说一样
+locs_changed.chanpos = locs_changed.elecpos;
+% 所用单位，需要的时候也能改成cm
+locs_changed.unit    = 'mm';
+
+
+% 然后才能构造邻近矩阵
+cfg_neighb = [];
+% 这个是怎么算电极们是邻居，这里用的距离，因为我们有locs
+cfg_neighb.method = 'distance';
+% locs_changed来自EEG.chanlocs的数据
+cfg_neighb.elec = locs_changed;
+
+
+% 最后提取出来邻近矩阵
+neighbours = ft_prepare_neighbours(cfg_neighb);
+end
+
+
+%%
+% 然后搞设计矩阵
+% 设计矩阵其实就是一个表格，第一行是被试信息，第二行是条件或分组信息
+
+% 首先需要准备维度信息
+npar;
+ncond;
+
+% 然后条件123分别对应rel irr odd
+% 默认的都是条件1 - 条件2
+cond_rel = 1;
+cond_irr = 2;
+
+
+% 开始定义条件矩阵
+design = zeros(2, ncond * npar);
+
+design(1, 1:npar) = 1:npar;  %条件1的被试编号
+design(1, (npar + 1):end) = 1:npar;  %条件2的被试编号
+
+% 下面的条件编号同理
+design(2, 1:npar) = cond_rel;
+design(2, (npar + 1):end) = cond_irr;
+
+
+%%
+% 然后定义统计参数，仍然从创建空结构体开始
+
+cfg = [];
+
+% 蒙特卡洛置换检验，不懂
+cfg.method = 'montecarlo';
+
+
+% 这个是统计量用哪个
+% 'indepsamplesF'独立f
+% 'depsamplesT'配对样本t；'indepsamplesT'独立样本t
+cfg.statistic = 'depsamplesT';
+% 单点阈值
+cfg.clusteralpha = 0.05;
+% 单尾还是双尾检验，0 = 双尾；1 = 单尾
+% t可以双尾；f永远单尾
+cfg.tail = 0;
+
+
+% 使用簇校正
+cfg.correctm = 'cluster';
+% 簇统计量，这里是求和方法
+cfg.clusterstatistic = 'maxsum';
+% 簇级别的显著阈值
+cfg.alpha = 0.05;
+% 簇级别的单双尾
+cfg.clustertail = 0;
+% 置换次数
+cfg.numrandomization = 1000;
+
+
+% 是否做空间cluster
+cfg.minnbchan = 1;
+
+if 1
+% 提供邻近矩阵
+cfg.neighbours = neighbours;
+% 至少两个邻居才能形成簇
+cfg.minnbchan  = 2;
+end
+
+
+% 投喂设计矩阵
+cfg.design = design;
+% unit variable = 被试/观测
+cfg.uvar = 1;
+% independent variable = 条件/组别
+cfg.ivar = 2;
+
+
+%%
+% 准备好上面的统计参数后就可以调用统计函数了
+% 时域用ft_timelockstatistics()
+% 调用统计函数进行时域分析
+output = ft_freqstatistics(cfg, freq);
+save('./output_TFR.mat', 'output');
+```
+
+One thing should be noted is the single/double tail parameters, `FieldTrip` uses `cond_1 - cond_2` by default. Here's the take-home note:
+
+|items|left tail|right tail|double tail|
+|:----|:----|:----|:----|
+|`cfg.tail`|-1|1|0|
+|`cfg.clustertail`|-1|1|0|
+|meaning|to test if `cond_1` is smaller|to test if `cond_1` is greater|to test whether different|
+
+<font color = 'red'>**`cfg.tail` and `cfg.clustertail` should be consistent!**</font>
+
+Then we can check the result, namely the variable `output` in the last code chunk. For me it's important to figure out the data structure of `output`.
+
+```{MATLAB permutation_output}
+%%
+% 然后就可以看结果嘞，关键是结果的数据结构
+% 簇的簇级p值，pos前缀，正向结果啦
+output.posclusters.prob
+% 簇的统计量（t值或F值的对应簇的和）
+output.posclusters.clusterstat
+
+
+% 然后负向性结果的也可以看
+% 同样是p值
+output.negclusters.prob
+% 这个也是统计量
+output.negclusters.clusterstat
+
+
+%%
+% 然后是看某个簇的空间时间还有频率分布
+% output.posclusterslabelmat是所有簇的编号矩阵
+% 比如1是第一大簇，2是第二大以此类推，0就是没有簇
+% 然后这就相当于去找效应量排第1的簇，只是按效应大小排序，无关显著性
+% output.mask是 显著簇 的掩码矩阵，只有0和1
+mask = output.posclusterslabelmat == 1;
+
+
+% 然后其实我觉得还有个技巧就是用查唯一值的方法去看一共有几个簇
+% r里是n_distinct，这里是unique
+uniqe(output.posclusterslabelmat)
+
+
+% 然后我们去时空定位这个簇的所在，当然还有频率的所在
+% ind2sub就是把find的线性索根据size的信息转为多维索引
+[chan_id, freq_id, time_id] = ind2sub(size(mask), find(mask));
+
+time_range = output.time(time_id);
+freq_range = output.freq(freq_id);
+chan_involved = output.label(chan_id);
+
+
+%%
+% 有价值的是怎么去把结果里的显著簇的信息整明白
+% 我先用这个工作流将就一下
+
+% 先找到每一个显著簇，先假设0.99为阈值，仅作演示
+sig_id = find([output.posclusters.prob] < 0.05);
+
+% 创建并预分配一个table
+summary = table(zeros([length(sig_id), 1]), ...
+                zeros([length(sig_id), 1]), ...
+                zeros([length(sig_id), 1]), ...
+                zeros([length(sig_id), 1]), ...
+                zeros([length(sig_id), 1]), ...
+                zeros([length(sig_id), 1]), ...
+                zeros([length(sig_id), 1]), ...
+                cell([length(sig_id), 1]), ...
+                'VariableNames', {'id','stat','p_value', ...
+                                  'freq_min', 'freq_max', ...
+                                  'time_min','time_max','chan'});
+
+id = 1;
+
+% 然后就可以利用这个索引定位簇
+for ccluster = sig_id
+    sig_mask = output.posclusterslabelmat == ccluster;
+
+    % 计算定位索引
+    [chan_id, freq_id, time_id] = ind2sub(size(sig_mask), find(sig_mask));
+
+    % 然后每个只取极值表示一下范围就行了
+    freq_min = min(output.freq(freq_id));
+    freq_max = max(output.freq(freq_id));
+
+    time_min = min(output.time(time_id));
+    time_max = max(output.time(time_id));
+
+    % 然后得统计一下重要的数据
+    summary.id(ccluster) = id;
+    summary.stat(ccluster) = output.posclusters(ccluster).clusterstat;
+    summary.p_value(ccluster) = output.posclusters(ccluster).prob;
+    summary.freq_min(ccluster) = freq_min;
+    summary.freq_max(ccluster) = freq_max;
+    summary.time_min(ccluster) = time_min;
+    summary.time_max(ccluster) = time_max;
+
+    % 涉及通道比较特殊，一个单元格不好放，干脆这样吧
+    chan_id = unique(chan_id);
+    summary.chan(ccluster) = {output.label(chan_id)};
+
+    id = id + 1;
+
+end
+
+% 然后就可以check这些玩意了，喜欢哪一个就重点拉出来画图什么的
+```
+
+Then we can plot. We've already known the topoplot enough, but here a new form of FTR is demonstrated as it has `contour()` to create edge line of sigficant cluster on the plot.
+
+```{MATLAB plot_time_freq_permutation}
+%%
+% 然后就是画图
+
+% 首先是时频图，我仍然更习惯于imagesc
+% 因为这个数据没有显著点，所以这里我们就用mask来替代吧
+mask = output.posclusterslabelmat == 1;
+
+% 然后我们用Oz的数据
+chan_id = find(strcmp(output.label, 'Oz'));
+mask = squeeze(mask(chan_id, :, :));
+data_plot = squeeze(output.stat(chan_id, :, :));
+
+
+% 然后开始画时频图
+figure;
+imagesc(output.time, output.freq, data_plot);
+axis xy; colorbar;
+% 这个是修改颜色配色
+colormap(jet);
+% 然后colorbar的数轴规范一下，就是让他对称
+clim([-max(abs(data_plot(:))), max(abs(data_plot(:)))]);
+hold on;
+
+% 这里主要是要加一个新元素contour，给显著区加边缘线
+% [0.5, 0.5]效果一样，就是画一条值为0.5的等高线线，正好是0和1分界线
+% 然后贼傻逼的是这里的参数顺序还tm不能乱，傻逼matlab
+contour(output.time, ...
+        output.freq, ...
+        mask, ...
+        [0.5, 0.5], ...
+        'k-', ...
+        'linewidth', 3);
+hold off;
+
+
+% 然后是在显著的地方还得画出来地形图，但是这个我想不难
+% 不过我们没有显著数据，所以还是用mask的替代一下
+mask = output.posclusterslabelmat == 1;
+[chan_id, freq_id, time_id] = ind2sub(size(mask), find(mask));
+
+% 得额外准备一下电极信息
+load('./ALL.mat');
+chan_id = unique(chan_id);
+
+topo_data = squeeze(mean(output.stat(:, freq_id, time_id), [2, 3]));
+
+% 然后这里也多了一个元素就是emarker2
+% 它可以标记一些我们可能感兴趣的电极
+% 比如这里就有空间簇，给入通道检索，然后设置格式
+figure;
+topoplot(topo_data, locs, ...
+         'maplimits', 'minmax', ...
+         'electrodes', 'on', ...
+         'emarker2', {chan_id, '*', 'k', 7});
+colorbar;
+```
 
 调参 tweak parameters
 低频/高频末端 lower-/higher frequency end
